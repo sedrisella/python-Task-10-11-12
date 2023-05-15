@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Buku Tamu</title>
+     <!-- CSS 1-->
+     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+     <!-- Akhir dari CSS 1-->
+     <!--CSS BOOTSTRAP-->
+     <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap.css' %}">
+</head>
+<body>
+    <img id="banner" src= "{% static 'crud.jpg' %}" alt="">
+    <div id="menu">
+        <!--Menu-->
+        <ul>
+            <li><a href="/" class="">Home</a></li>
+            <li><a href="/about/" class="">About</a></li>
+            <li><a href="/buku/" class="">Buku</a></li>
+            <li><a href="/tamu/" class="">Buku Tamu</a></li>
+        </ul>
+    </div>
+
+    <!-- KELAS CONTAINER BOOTSTRAP -->
+    <div class="container">
+        <br>
+            <form method="POST">
+                {% csrf_token %}
+                <table>
+                    {{BukuTamu.as_table}}
+                </table>
+                <button type="submit" class="btn btn-success">Simpan</button>
+            </form>
+        </br>
+    </div>
+
+     <!-- Container BOOTSTRAP -->
+    
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+    <span class="text-dark">Copyright 2022</span>
+    </div>
+    </footer>
+    
+        <!--JS BOOTSTRAP-->
+        <script src="{% static 'vendor/bootstrap/bootstrap.js' %}" type="text/javascripts"></script>
+        <script src="{% static 'vendor/bootstrap/jquery-3.3.1.slim.min.js' %}" type="text/javascripts"></script>
+        <script src="{% static 'vendor/bootstrap/popper.min.js' %}" type="text/javascripts"></script>
+    
+    
+</body>
+</html>
